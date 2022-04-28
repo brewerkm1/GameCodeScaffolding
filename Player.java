@@ -53,9 +53,19 @@ public class Player
 
     public void firstBoss()
     {
+        int choice;
         Deck deck = new Deck();
+        cardData cardsNames = new cardData();
+        deck.generateDeck(10, cardsNames.NAMES(), cardsNames.STRENGTHS(), cardsNames.DEFENSE(), deck);
         Hand hand = new Hand(deck);
-        hand.toString();
+        //System.out.println(deck.toString());
+        hand.deal(deck, hand,6);
+        System.out.println(hand.toString());
+        System.out.println("Which card would you like to play?");
+        choice = kb.nextInt();
+        hand.playCard(hand, choice - 1);
+        System.out.println(hand.toString());
+
     }
 
     //Getters and setters
