@@ -128,12 +128,33 @@ public class Driver {
 
                     break;
                 case 4:
-                    Shop shop1 = new Shop(currency, ptrinkets, pconsumables, strinkets.get(0), sconsumables.get(0),
-                            sconsumables.get(1));
-                    shop1.openShop();
-                    currency = shop1.getCurrency();
-                    ptrinkets = shop1.getTrinkets();
-                    pconsumables = shop1.getConsumables();
+                    double r = Math.random();
+                    int randomNum = (int)(r *(3 - 0)) + 0;
+                    System.out.println(randomNum);
+                    if(randomNum == 0) {
+                        Shop shop1 = new Shop(currency, ptrinkets, pconsumables, strinkets.get(0), sconsumables.get(0),
+                                sconsumables.get(3));
+                        shop1.openShop();
+                        currency = shop1.getCurrency();
+                        ptrinkets = shop1.getTrinkets();
+                        pconsumables = shop1.getConsumables();
+                    }
+                    else if(randomNum == 1) {
+                        Shop shop1 = new Shop(currency, ptrinkets, pconsumables, strinkets.get(2), sconsumables.get(1),
+                                sconsumables.get(2));
+                        shop1.openShop();
+                        currency = shop1.getCurrency();
+                        ptrinkets = shop1.getTrinkets();
+                        pconsumables = shop1.getConsumables();
+                    }
+                    else if(randomNum == 2) {
+                        Shop shop1 = new Shop(currency, ptrinkets, pconsumables, strinkets.get(4), sconsumables.get(0),
+                                sconsumables.get(1));
+                        shop1.openShop();
+                        currency = shop1.getCurrency();
+                        ptrinkets = shop1.getTrinkets();
+                        pconsumables = shop1.getConsumables();
+                    }
                     break;
                 case 5:
                     int npcChance = npc.nextInt(2);
@@ -183,7 +204,7 @@ public class Driver {
         int stam3 = 0;
         int hp3 = 0;
         int mp3 = 0;
-        int price3 = 200;
+        int price3 = 150;
 
         String trinketName4 = "Lucky Rabbit's Foot";
         String desc4 = "It's a rabbit's foot.(Increases morale.)";
@@ -197,7 +218,7 @@ public class Driver {
         int stam5 = 0;
         int hp5 = 10;
         int mp5 = 40;
-        int price5 = 0;
+        int price5 = 100;
 
         emeraldRing = new Trinket(desc1, trinketName1, stam1, hp1, mp1, price1);
         burningAthame = new Trinket(desc2, trinketName2, stam2, hp2, mp2, price2);
@@ -228,7 +249,8 @@ public class Driver {
         String description3 = ("Found in the Shop Keeps hut, you feel as if its calling to you......");
         int healthEffect3 = 100;
         int mpEffect3 = -100;
-        int price3 = 0;
+        int price3 = 80;
+
 
         String name4 = ("Leftovers");
         String description4 = ("A seemingly ancient take out box, it exudes a curious aroma");
@@ -280,7 +302,20 @@ public class Driver {
     }
     public void battle(Player player, Enemy enemy)
     {
-
+        String name = "Crotch-O-Dile";
+        String description = "A monster with the bottom half of a human, nd the top half of a crocodile";
+        int health = 500;
+        int baseAttack = 10;
+        Enemy Crotch = new Enemy(name, description, health, baseAttack);
+        System.out.println("You continue to drag yourself through the desert as the taste of blood" +
+                "\n" + "fills your mouth");
+        System.out.println("Your weary eyes see a temple and decide to take refuge inside....");
+        System.out.println("Inside you are consumed by the shine of the glowing shine of " +
+                "throne at the center of the room.");
+        System.out.println("Upon this throne you see a man, or a beast, your not quite sure.");
+        System.out.println("You see his legs spread upon the throne, his voice booms:");
+        System.out.println("Crotch-O-Dile: \"YOU DARE STEP FOOT IN MY TEMPLE?! \n I'LL " +
+                "TEAR YOU APART!");
     }
     public String winMessage()
     {
