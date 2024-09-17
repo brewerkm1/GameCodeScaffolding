@@ -2,6 +2,7 @@ import java.util.Scanner;
 import java.util.ArrayList;
 import java.util.Random;
 public class Driver {
+
     static Player player;
     Enemy enemy;
     static int health;
